@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Header from "./components/Header";
+import BlogList from "./components/BlogList";
+import data from "./data";
+import Navbar from "./components/Navbar";
 
 function App() {
+  const blogs = data.map((post) => {
+    return (
+      <BlogList
+        key={post.id}
+        post = {post}
+      />
+    );
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          changed this text again and again
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      {blogs}
+      <button > Older Posts </button>
     </div>
   );
 }
