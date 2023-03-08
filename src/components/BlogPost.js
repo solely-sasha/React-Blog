@@ -7,7 +7,7 @@ export default function BlogPost(props) {
   }
 
   return (
-    <div>
+    <div className="main-content-container">
       <a href="#" className="titles">
       <h2>{props.post.title} </h2>
     <h3>{props.post.subTitle} </h3>
